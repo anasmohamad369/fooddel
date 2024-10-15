@@ -1,51 +1,110 @@
-.explore-menu{
+.explore-menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.explore-menu h1{
+
+.explore-menu h1 {
     color: #262626;
     font-weight: 500;
+}
 
-}
-.exploretext{
+.exploretext {
     max-width: 60%;
-    columns: #808088;    
+    color: #808088;
+    font-size: 1.2em; /* Adjust text size */
 }
-.exploremenu-list{
+
+/* Menu list scrollable with space between items */
+.exploremenu-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
     margin: 20px 0px;
     text-align: center;
-overflow-x: scroll;
+    overflow-x: scroll;
 }
-.exploremenu-list::-webkit-scrollbar
-{
-    display: none;
+
+.exploremenu-list::-webkit-scrollbar {
+    display: none; /* Hide scrollbars */
 }
-.exploremenulistitem img{
-    width: 7.5vw;
+
+/* Individual menu item with image */
+.exploremenulistitem img {
+    width: 7.5vw; /* Adjust image size based on viewport */
+    min-width: 80px;
+    max-width: 150px; /* Set max width for larger screens */
     transition: 0.5s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.exploremenulistitem p {
+    color: #262626;
+    font-size: max(1.4vw, 16px); /* Use responsive font sizing */
     min-width: 80px;
     cursor: pointer;
     border-radius: 50%;
 }
-.exploremenulistitem p{
-color:#262626;
-font-size: max(1.4vw,16px);
-    min-width: 80px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-.exploremenu hr{
+
+/* Separator line */
+.exploremenu hr {
     margin: 10px 0px;
     height: 2px;
     background-color: #e2e2e2;
     border: none;
 }
-.exploremenulistitem .active{
+
+/* Active menu item with border */
+.exploremenulistitem .active {
     border: 4px solid tomato;
     padding: 2px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .exploretext {
+        max-width: 80%; /* Expand text block on smaller screens */
+    }
+
+    .exploremenulistitem img {
+        width: 10vw; /* Increase image size on smaller screens */
+    }
+
+    .exploremenulistitem p {
+        font-size: max(2vw, 14px); /* Adjust font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .exploremenu-list {
+        gap: 20px; /* Reduce gap between items */
+    }
+
+    .exploremenulistitem img {
+        width: 15vw; /* Larger image size on small screens */
+    }
+
+    .exploremenulistitem p {
+        font-size: max(3vw, 12px); /* Adjust font size further */
+    }
+}
+
+@media (max-width: 480px) {
+    .exploretext {
+        max-width: 100%; /* Make text take full width on very small screens */
+    }
+
+    .exploremenu-list {
+        gap: 10px; /* Reduce gap even more */
+    }
+
+    .exploremenulistitem img {
+        width: 20vw; /* Increase image size for mobile */
+    }
+
+    .exploremenulistitem p {
+        font-size: max(4vw, 10px); /* Reduce font size on very small screens */
+    }
 }

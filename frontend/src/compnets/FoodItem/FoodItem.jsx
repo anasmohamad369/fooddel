@@ -3,13 +3,13 @@ import './FoodItem.css';
 import { assets } from '../../assets/assets';
 import { StoreContext } from '../../context/StoreContext';
 
-const FoodItem = ({ id, name, price, description, image }) => {
-  const { cartItems, addToCart, removecart } = useContext(StoreContext);
+const FoodItem = ({ id, name, price, description, image ,rating}) => {
+  const { cartItems, addToCart, removecart,url } = useContext(StoreContext);
 
   return (
     <div className='food-item'>
       <div className="foodimgcontainer">
-        <img className='fooditemimg' src={image} alt={name} />
+        <img className='fooditemimg' src={url+"/images/"+image} alt={name} />
         {/* Add to cart or update quantity */}
         {!cartItems[id] ? (
           <img className='add' onClick={() => addToCart(id)} src={assets.add_icon_white} alt='Add to cart' />
@@ -24,7 +24,8 @@ const FoodItem = ({ id, name, price, description, image }) => {
       <div className="fooditeminfo">
         <div className="fooditemrating">
           <p>{name}</p>
-          <img src={assets.rating_starts} alt='Rating' />
+          <h6>{rating}</h6>
+          {/* <img src={assets.rating_starts} alt='Rating' /> */}
         </div>
         <p className='fooditemdesc'>{description}</p>
         <p className="fooditemprice">${price}</p>

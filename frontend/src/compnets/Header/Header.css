@@ -1,12 +1,12 @@
 .headersection {
     height: 34vw;
     margin: 30px auto;
-    background: url("./header_img.png") no-repeat;
+    background: url("./header_img.png") no-repeat center center;
     position: relative;
     background-size: contain;
-  }
-  
-.headercontents{
+}
+
+.headercontents {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -17,22 +17,76 @@
     max-width: 50%;
     animation: fadein 2.5s ease-in;
 }
-.headercontents h1{
+
+.headercontents h1 {
     font-weight: 500;
     color: white;
-    font-size: max(4.5vw,22px);
+    font-size: max(4.5vw, 22px); 
 }
-.headercontents p{
+
+.headercontents p {
     font-weight: 500;
     color: white;
-    font-size: max(1.5vw);
+    font-size: max(1.5vw, 14px);
 }
-.headercontents button{
+
+.headercontents button {
     border: none;
     color: #747474;
     font-weight: 500;
     padding: 1vw 2.3vw;
-    font-size: max(1vw,13px);
+    font-size: max(1vw, 13px); 
     border-radius: 50px;
+}
 
+@media (max-width: 768px) {
+    .headersection {
+        height: 40vw; 
+        background-size: cover; 
+    }
+
+    .headercontents {
+        left: 4vw; 
+        bottom: 8%; 
+        max-width: 60%; 
+    }
+
+    .headercontents h1 {
+        font-size: 5vw; 
+    }
+
+    .headercontents p {
+        font-size: 2vw;
+    }
+
+    .headercontents button {
+        padding: 1.2vw 2.5vw; 
+        font-size: 1.5vw; 
+    }
+}
+
+@media (max-width: 480px) {
+    .headersection {
+        height: 50vw; 
+        background-size: cover; 
+    }
+
+    .headercontents {
+        left: 3vw; 
+        bottom: 5%; 
+        max-width: 80%; 
+    }
+
+    .headercontents h1 {
+        font-size: 24px;
+    }
+
+    .headercontents p {
+        font-size: 16px;
+    }
+
+    .headercontents button {
+        padding: 1.5vw 3vw; 
+        font-size: 14px; 
+    }
 }
